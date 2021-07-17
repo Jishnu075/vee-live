@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 # import django_heroku
-SECRET_KEY = os.environ['SECRET_KEY']
+# SECRET_KEY = os.environ['SECRET_KEY']
 
 
 from pathlib import Path
