@@ -1,1 +1,1 @@
-web: gunicorn Vee.wsgi --log-file -
+web: gunicorn vee.wsgi
