@@ -12,12 +12,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 
 import os
+import django_heroku
+SECRET_KEY = os.environ['SECRET_KEY']
+
 
 from pathlib import Path
-import environ
+# import environ
 
-env = environ.Env()
-environ.Env.read_env()
+# env = environ.Env()
+# environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,10 +30,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-0+r4+y2-e*+tx5q5$4z+8*(voab1w&7x%x%783@1)c^n+fr6l5"
+# SECRET_KEY = "django-insecure-0+r4+y2-e*+tx5q5$4z+8*(voab1w&7x%x%783@1)c^n+fr6l5"
+SECRET_KEY = "*&_kvn2p1!w^#6w9i@0_g=ydjqf-zi=r3y40lq*um^+ycq("
+# SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '*&_kvn2p1!w^#6w9i@0_g=ydjqf-zi=r3y40lq*um^+ycq(')
+DEBUG = False
+# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
 
 ALLOWED_HOSTS = []
 
@@ -149,3 +157,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'web_home'
 LOGIN_URL = 'web_login'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
